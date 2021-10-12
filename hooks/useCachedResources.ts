@@ -1,4 +1,4 @@
-import { FontAwesome } from '@expo/vector-icons';
+import {FontAwesome, Ionicons} from '@expo/vector-icons';
 import * as Font from 'expo-font';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
@@ -14,8 +14,12 @@ export default function useCachedResources() {
 
         // Load fonts
         await Font.loadAsync({
-          ...FontAwesome.font,
+          ...Ionicons.font,
           'space-mono': require('../assets/fonts/SpaceMono-Regular.ttf'),
+          percolate: require('../assets/icon/percolate.ttf'),
+          'NunitoSans-Bold': require('../assets/font/NunitoSans-Bold.ttf'),
+          'NunitoSans-Italic': require('../assets/font/NunitoSans-Italic.ttf'),
+          NunitoSans: require('../assets/font/NunitoSans-Regular.ttf'),
         });
       } catch (e) {
         // We might want to provide this error information to an error reporting service
